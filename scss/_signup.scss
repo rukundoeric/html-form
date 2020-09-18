@@ -22,8 +22,16 @@ button {
 }
 
 .warning {
-  color: $color_warning;
-  font-size: 12px;
+  i {
+    display: block !important;
+    color: $color_warning !important;
+  }
+
+  small {
+    display: block !important;
+    color: $color_warning !important;
+    font-size: 12px;
+  }
 }
 
 .hide {
@@ -60,47 +68,47 @@ button {
   }
 }
 
-main {
-  width: 100%;
+header {
+  padding: 10px;
+  position: relative;
+  padding-right: 40px;
 
-  header {
-    padding: 10px;
+  .login-header {
     position: relative;
-    padding-right: 40px;
+    float: right;
 
-    .login-header {
-      position: relative;
-      float: right;
+    span {
+      margin-right: 10px;
+      float: left;
 
-      label {
-        margin-right: 10px;
-        float: left;
+      @include flex(column);
 
-        @include flex(column);
+      small {
+        font-size: 13px;
 
-        small {
-          font-size: 13px;
-
-          &:nth-of-type(1) {
-            color: $color_gray;
-          }
-
-          &:nth-of-type(2) {
-            color: $color_main;
-          }
+        &:nth-of-type(1) {
+          color: $color_gray;
         }
-      }
 
-      button {
-        padding: 8px 25px;
-        font-size: 12px;
-
-        i {
-          margin-right: 5px;
+        &:nth-of-type(2) {
+          color: $color_main;
         }
       }
     }
+
+    button {
+      padding: 8px 25px;
+      font-size: 12px;
+
+      i {
+        margin-right: 5px;
+      }
+    }
   }
+}
+
+main {
+  width: 100%;
 
   .signup-content {
     position: relative;
@@ -111,11 +119,12 @@ main {
       left: 0;
       right: 0;
       margin: auto;
-      // position: absolute;
+      position: relative;
       width: 400px;
       margin-top: 50px;
 
       .icons-content {
+        position: relative;
         flex: 1;
         padding-bottom: 15px;
 
@@ -123,6 +132,9 @@ main {
           display: flex;
           justify-content: center;
           padding: 20px 0;
+          opacity: 0;
+          animation: fadeIn 1s 2.3s forwards normal;
+          transition: all 1s ease-in-out;
 
           img {
             width: 100px;
@@ -131,9 +143,24 @@ main {
         }
 
         .icons {
+          position: relative;
           justify-content: center;
+          left: 130px;
+          animation: slide-left 1s 2.3s forwards normal;
+          transition: all 1s ease-in-out;
 
           @include flex(row);
+
+          .display {
+            opacity: 0;
+            animation: fadeIn 1s 2.3s forwards normal;
+          }
+
+          .mint {
+            opacity: 1 !important;
+            animation: mint 1s 1s forwards normal;
+            transition: all 1s ease-in-out;
+          }
 
           label {
             display: table;
@@ -197,16 +224,8 @@ main {
               margin-bottom: 10px;
             }
 
-            #phone {
-              i {
-                color: $color_warning !important;
-              }
-            }
-
-            #password {
-              i {
-                color: $color_warning !important;
-              }
+            i {
+              display: none;
             }
 
             .password-error {
@@ -214,7 +233,7 @@ main {
 
               small {
                 font-size: 12px;
-                margin-bottom: 2px;/* stylelint-disable */ 
+                margin-bottom: 2px; /* stylelint-disable */
 
                 i {
                   font-size: 12px;
@@ -226,11 +245,17 @@ main {
 
             button {
               padding: 12px 50px;
-              font-size: 15px;/* stylelint-disable */ 
+              font-size: 15px; /* stylelint-disable */
 
               i {
                 margin-right: 5px;
               } /* stylelint-enable */
+            }
+          }
+
+          .form-group.phone {
+            small {
+              display: none;
             }
           }
         }
@@ -244,12 +269,12 @@ main {
     font-style: italic;
     line-height: 2;
     padding: 0 20px;
-    text-align: center;/* stylelint-disable */ 
+    text-align: center; /* stylelint-disable */
 
     a {
       color: $color_main;
       text-decoration: none;
-    }/* stylelint-enable */
+    } /* stylelint-enable */
   }
 
   .form-footer {
@@ -259,32 +284,12 @@ main {
     color: $color_gray_2;
     background-color: $color_gray_light;
     border: 1px solid $color_gray_3;
-    border-top: none;/* stylelint-disable */ 
+    border-top: none; /* stylelint-disable */
 
     a {
       color: $color_main;
       text-decoration: none;
-    }/* stylelint-enable */
-  }
-
-  footer {
-    text-align: center;
-    font-size: 13px;
-    color: $color_gray_dark;
-    padding: 15px 0;/* stylelint-disable */ 
-
-    p {
-      margin: 4px;
-      a {
-        color: $color_gray_dark;
-        text-decoration: none;
-        margin: 0 5px;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }/* stylelint-enable */
-    }
+    } /* stylelint-enable */
   }
 
   .settings {
@@ -296,5 +301,25 @@ main {
     background-color: $color_gray_1;
     font-size: 15px;
     border-radius: 3px 3px 0 0;
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: $color_gray_dark;
+  padding: 15px 0; /* stylelint-disable */
+
+  p {
+    margin: 4px;
+    a {
+      color: $color_gray_dark;
+      text-decoration: none;
+      margin: 0 5px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    } /* stylelint-enable */
   }
 }

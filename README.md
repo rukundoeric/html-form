@@ -2,7 +2,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # HTML FORM
 > A structural clone of the intuit's signup page
-![screenshot](screen-shot.JPG)
+![screenshot](img/screen-shot.JPG)
 
 
 ## Built With

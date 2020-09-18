@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="./img/favicon.png" type="image/png" sizes="16x16">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
   <title>Signup Form</title>
 </head>
 <body>
- <main>
-   <header>
-     <label class="login-header">
-       <label>
-         <small>Already have an Intuit account?</small>      
-         <small>I forgot my User ID or Password</small>        
-       </label>
-       <button>
-         <i class="fa fa-lock" aria-hidden="true"></i>
-         Sign In
-       </button>
+  <header>
+    <label class="login-header">
+      <span>
+        <small>Already have an Intuit account?</small>      
+        <small>I forgot my User ID or Password</small>        
+      </span>
+      <button>
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        Sign In
+      </button>
      </label>
-   </header>
+   </header> 
+ <main>
    <div class="signup-content">
      <div class="signup-form-content">
        <div class="icons-content">
@@ -30,15 +30,15 @@
          </div>
          <div class="icons">
            <label>
-             <img src="/img/icon1.png" alt="">
-             <span>mint</span>
+             <img class="mint" src="./img/icon1.png" alt="">
+             <span class="display">mint</span>
            </label>
-           <label>
-              <img src="/img/icon2.png" alt="">
+           <label class="display">
+              <img src="./img/icon2.png" alt="">
               <span>quickbooks</span>
            </label>
-           <label>
-              <img src="/img/icon3.png" alt="">
+           <label class="display">
+              <img src="./img/icon3.png" alt="">
               <span>turbotax</span>
            </label>
          </div>
@@ -49,20 +49,20 @@
            <p>One account for everything Intuit, including Mint.</p>
            <a href="">Learn more</a>
         </div>
-        <form id="signup-form" action="">
-          <formgroup class="form-group">
+        <form id="signup-form" action="self">
+          <div class="form-group">
             <label>Email address</label>
             <input type="text">
-          </formgroup>
-          <formgroup class="form-group">
+          </div>
+          <div class="form-group phone" id="phone-form-group">
             <label>Phone (recommended)</label>
             <label class="input-with-icon" id="phone">
-              <input type="text">
+              <input id="phone-field" type="text">
               <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
             </label>
-            <small class="warning">We strongly recommend adding a phone number. This will help verify your account and keep it safe.</small>
-          </formgroup>
-          <formgroup id="password-form-field" class="form-group">
+            <small>We strongly recommend adding a phone number. This will help verify your account and keep it safe.</small>
+          </div>
+          <div id="password-form-field" class="form-group">
             <label>Password</label>
             <label class="input-with-icon" id="passord">
               <input id="password-field" type="text">
@@ -74,14 +74,14 @@
               <small><i class="fa fa-times" aria-hidden="true"></i>Use a number (e.g. 1234)</small>
               <small><i class="fa fa-times" aria-hidden="true"></i>Use a symbol (e.g. !@#$)</small>
             </div>
-          </formgroup>
-          <formgroup id="confirm-password" class="form-group hide">
+          </div>
+          <div id="confirm-password" class="form-group hide">
             <label>Confirm password</label>
             <input type="text">
-          </formgroup>
-          <formgroup class="form-group">
+          </div>
+          <div class="form-group">
             <button type="submit"> <i class="fa fa-lock" aria-hidden="true"></i>Create Account</button>
-          </formgroup>
+          </div>
           <div class="privacy">
             By clicking Create account, you agree to our
             <a href="#">Terms</a> and have read and acknowledge our <a href="#">Privacy Statement</a>.
@@ -93,7 +93,11 @@
        </div>
      </div>
    </div>
-   <footer>
+   <button class="settings">
+     Privacy Settings
+   </button>
+ </main>
+  <footer>
      <p> 
        <a href="#">Legal</a>
        <a href="#">Privacy</a>
@@ -105,36 +109,7 @@
     <p>
       Terms and conditions, features, support, pricing, and service options subject to change without notice.
     </p>
-   </footer>
-   <button class="settings">
-     Privacy Settings
-   </button>
- </main>
+  </footer>
+  <script src="js/index.js"></script>
 </body>
-<script>
-  let confirm_psw_visible = false;
-  let psw = document.querySelector("#password-field");
-  let pff = document.querySelector("#password-form-field");
-  let error = document.querySelector("#password-error"); 
-  let confirm_psw = document.querySelector("#confirm-password");
-  psw.addEventListener("keyup", (e) => {
-    if(e.target.value.length >= 8){
-      if(pff.classList.contains("error")){
-        pff.classList.remove('error');
-        error.classList.add('hide');
-      }
-    } else {
-      if(!pff.classList.contains("error")){
-        pff.classList.add('error');
-        error.classList.remove('hide');
-      }
-    }
-  });
-
-  psw.addEventListener("focus", () => {
-    if(!confirm_psw_visible){
-      confirm_psw.classList.remove('hide');
-    }
-  });
-</script>
 </html>
