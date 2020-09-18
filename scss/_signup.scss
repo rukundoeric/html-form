@@ -111,12 +111,13 @@ main {
       left: 0;
       right: 0;
       margin: auto;
-      position: absolute;
+      // position: absolute;
       width: 400px;
       margin-top: 50px;
 
       .icons-content {
         flex: 1;
+        padding-bottom: 15px;
 
         .logo {
           display: flex;
@@ -154,7 +155,7 @@ main {
 
       .form-content {
         background-color: $color_white;
-        border: 1px solid $color_gray;
+        border: 1px solid $color_gray_3;
         padding: 25px;
 
         .form-title {
@@ -213,27 +214,87 @@ main {
 
               small {
                 font-size: 12px;
-                margin-bottom: 2px;
+                margin-bottom: 2px;/* stylelint-disable */ 
 
                 i {
                   font-size: 12px;
                   font-weight: 100;
                   margin-right: 5px;
-                }
+                } /* stylelint-enable */
               }
             }
 
             button {
               padding: 12px 50px;
-              font-size: 15px;
+              font-size: 15px;/* stylelint-disable */ 
 
               i {
                 margin-right: 5px;
-              }
+              } /* stylelint-enable */
             }
           }
         }
       }
     }
+  }
+
+  .privacy {
+    color: $color_gray;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 2;
+    padding: 0 20px;
+    text-align: center;/* stylelint-disable */ 
+
+    a {
+      color: $color_main;
+      text-decoration: none;
+    }/* stylelint-enable */
+  }
+
+  .form-footer {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 10px;
+    color: $color_gray_2;
+    background-color: $color_gray_light;
+    border: 1px solid $color_gray_3;
+    border-top: none;/* stylelint-disable */ 
+
+    a {
+      color: $color_main;
+      text-decoration: none;
+    }/* stylelint-enable */
+  }
+
+  footer {
+    text-align: center;
+    font-size: 13px;
+    color: $color_gray_dark;
+    padding: 15px 0;/* stylelint-disable */ 
+
+    p {
+      margin: 4px;
+      a {
+        color: $color_gray_dark;
+        text-decoration: none;
+        margin: 0 5px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }/* stylelint-enable */
+    }
+  }
+
+  .settings {
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    margin: 0;
+    padding: 15px 20px;
+    background-color: $color_gray_1;
+    font-size: 15px;
+    border-radius: 3px 3px 0 0;
   }
 }
