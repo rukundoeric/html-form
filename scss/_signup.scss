@@ -1,0 +1,239 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $color_gray_light;
+  font-family: $font-1;
+}
+
+input {
+  border: 1px solid $color_gray_2;
+  outline: none;
+  height: 30px;
+  border-radius: 4px;
+  padding: 0 0 0 10px;
+}
+
+button {
+  background-color: $color_main;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid $color_gray_dark;
+  color: $color_white;
+}
+
+.warning {
+  color: $color_warning;
+  font-size: 12px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.input-with-icon {
+  position: relative;
+
+  input {
+    width: 98%;
+  }
+
+  i {
+    position: absolute;
+    font-size: 25px;
+    right: 5px;
+    top: 5px;
+    color: $color_gray_2;
+  }
+}
+
+.error {
+  input {
+    border-color: $color_danger !important;
+  }
+
+  i {
+    color: $color_danger !important;
+  }
+
+  small {
+    color: $color_danger !important;
+  }
+}
+
+main {
+  width: 100%;
+
+  header {
+    padding: 10px;
+    position: relative;
+    padding-right: 40px;
+
+    .login-header {
+      position: relative;
+      float: right;
+
+      label {
+        margin-right: 10px;
+        float: left;
+
+        @include flex(column);
+
+        small {
+          font-size: 13px;
+
+          &:nth-of-type(1) {
+            color: $color_gray;
+          }
+
+          &:nth-of-type(2) {
+            color: $color_main;
+          }
+        }
+      }
+
+      button {
+        padding: 8px 25px;
+        font-size: 12px;
+
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .signup-content {
+    position: relative;
+    clear: both;
+    width: 100%;
+
+    .signup-form-content {
+      left: 0;
+      right: 0;
+      margin: auto;
+      position: absolute;
+      width: 400px;
+      margin-top: 50px;
+
+      .icons-content {
+        flex: 1;
+
+        .logo {
+          display: flex;
+          justify-content: center;
+          padding: 20px 0;
+
+          img {
+            width: 100px;
+            margin: 0 auto;
+          }
+        }
+
+        .icons {
+          justify-content: center;
+
+          @include flex(row);
+
+          label {
+            display: table;
+            padding: 5px 5px;
+          }
+
+          img {
+            width: 25px;
+            vertical-align: middle;
+            margin-right: 5px;
+          }
+
+          span {
+            color: $color_gray;
+            font-size: 17px;
+          }
+        }
+      }
+
+      .form-content {
+        background-color: $color_white;
+        border: 1px solid $color_gray;
+        padding: 25px;
+
+        .form-title {
+          text-align: center;
+
+          span {
+            color: $color_gray_1;
+            font-size: 22px;
+          }
+
+          p {
+            color: $color_gray_1;
+            font-size: 15px;
+            font-weight: 100;
+            margin-bottom: 2px;
+          }
+
+          a {
+            text-decoration: none;
+            color: $color_main;
+            font-size: 13px;
+            font-weight: 200;
+          }
+        }
+
+        #signup-form {
+          padding: 20px 10px;
+
+          @include flex(column);
+
+          .form-group {
+            flex: 1;
+            margin: 15px 0;
+
+            @include flex(column);
+
+            label {
+              color: $color_gray_1;
+              margin-bottom: 10px;
+            }
+
+            #phone {
+              i {
+                color: $color_warning !important;
+              }
+            }
+
+            #password {
+              i {
+                color: $color_warning !important;
+              }
+            }
+
+            .password-error {
+              @include flex(column);
+
+              small {
+                font-size: 12px;
+                margin-bottom: 2px;
+
+                i {
+                  font-size: 12px;
+                  font-weight: 100;
+                  margin-right: 5px;
+                }
+              }
+            }
+
+            button {
+              padding: 12px 50px;
+              font-size: 15px;
+
+              i {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
