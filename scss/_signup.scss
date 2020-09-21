@@ -1,0 +1,327 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $color_gray_light;
+  font-family: $font-1;
+}
+
+input {
+  border: 1px solid $color_gray_2;
+  outline: none;
+  height: 30px;
+  border-radius: 4px;
+  padding: 0 0 0 10px;
+}
+
+button {
+  background-color: $color_main;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid $color_gray_dark;
+  color: $color_white;
+}
+
+.warning {
+  i {
+    display: block !important;
+    color: $color_warning !important;
+  }
+
+  small {
+    display: block !important;
+    color: $color_warning !important;
+    font-size: 12px;
+  }
+}
+
+.hide {
+  display: none !important;
+}
+
+.input-with-icon {
+  position: relative;
+
+  input {
+    width: 98%;
+  }
+
+  i {
+    position: absolute;
+    font-size: 25px;
+    right: 5px;
+    top: 5px;
+    color: $color_gray_2;
+  }
+}
+
+.error {
+  input {
+    border-color: $color_danger !important;
+  }
+
+  i {
+    color: $color_danger !important;
+  }
+
+  small {
+    color: $color_danger !important;
+  }
+}
+
+header {
+  padding: 10px;
+  position: relative;
+  padding-right: 40px;
+
+  .login-header {
+    position: relative;
+    float: right;
+
+    span {
+      margin-right: 10px;
+      float: left;
+
+      @include flex(column);
+
+      small {
+        font-size: 13px;
+
+        &:nth-of-type(1) {
+          color: $color_gray;
+        }
+
+        &:nth-of-type(2) {
+          color: $color_main;
+        }
+      }
+    }
+
+    button {
+      padding: 8px 25px;
+      font-size: 12px;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+main {
+  width: 100%;
+
+  .signup-content {
+    position: relative;
+    clear: both;
+    width: 100%;
+
+    .signup-form-content {
+      left: 0;
+      right: 0;
+      margin: auto;
+      position: relative;
+      width: 400px;
+      margin-top: 50px;
+
+      .icons-content {
+        position: relative;
+        flex: 1;
+        padding-bottom: 15px;
+
+        .logo {
+          display: flex;
+          justify-content: center;
+          padding: 20px 0;
+          opacity: 0;
+          animation: fadeIn 1s 2.3s forwards normal;
+          transition: all 1s ease-in-out;
+
+          img {
+            width: 100px;
+            margin: 0 auto;
+          }
+        }
+
+        .icons {
+          position: relative;
+          justify-content: center;
+          left: 130px;
+          animation: slide-left 1s 2.3s forwards normal;
+          transition: all 1s ease-in-out;
+
+          @include flex(row);
+
+          .display {
+            opacity: 0;
+            animation: fadeIn 1s 2.3s forwards normal;
+          }
+
+          .mint {
+            opacity: 1 !important;
+            animation: mint 1s 1s forwards normal;
+            transition: all 1s ease-in-out;
+          }
+
+          label {
+            display: table;
+            padding: 5px 5px;
+          }
+
+          img {
+            width: 25px;
+            vertical-align: middle;
+            margin-right: 5px;
+          }
+
+          span {
+            color: $color_gray;
+            font-size: 17px;
+          }
+        }
+      }
+
+      .form-content {
+        background-color: $color_white;
+        border: 1px solid $color_gray_3;
+        padding: 25px;
+
+        .form-title {
+          text-align: center;
+
+          span {
+            color: $color_gray_1;
+            font-size: 22px;
+          }
+
+          p {
+            color: $color_gray_1;
+            font-size: 15px;
+            font-weight: 100;
+            margin-bottom: 2px;
+          }
+
+          a {
+            text-decoration: none;
+            color: $color_main;
+            font-size: 13px;
+            font-weight: 200;
+          }
+        }
+
+        #signup-form {
+          padding: 20px 10px;
+
+          @include flex(column);
+
+          .form-group {
+            flex: 1;
+            margin: 15px 0;
+
+            @include flex(column);
+
+            label {
+              color: $color_gray_1;
+              margin-bottom: 10px;
+            }
+
+            i {
+              display: none;
+            }
+
+            .password-error {
+              @include flex(column);
+
+              small {
+                font-size: 12px;
+                margin-bottom: 2px; /* stylelint-disable */
+
+                i {
+                  font-size: 12px;
+                  font-weight: 100;
+                  margin-right: 5px;
+                } /* stylelint-enable */
+              }
+            }
+
+            button {
+              padding: 12px 50px;
+              font-size: 15px; /* stylelint-disable */
+
+              i {
+                margin-right: 5px;
+              } /* stylelint-enable */
+            }
+          }
+
+          .form-group.phone {
+            small {
+              color: $color_gray_1;
+              font-size: 10px;
+              margin: -3px 0 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .privacy {
+    color: $color_gray;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 2;
+    padding: 0 20px;
+    text-align: center; /* stylelint-disable */
+
+    a {
+      color: $color_main;
+      text-decoration: none;
+    } /* stylelint-enable */
+  }
+
+  .form-footer {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 10px;
+    color: $color_gray_2;
+    background-color: $color_gray_light;
+    border: 1px solid $color_gray_3;
+    border-top: none; /* stylelint-disable */
+
+    a {
+      color: $color_main;
+      text-decoration: none;
+    } /* stylelint-enable */
+  }
+
+  .settings {
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    margin: 0;
+    padding: 15px 20px;
+    background-color: $color_gray_1;
+    font-size: 15px;
+    border-radius: 3px 3px 0 0;
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: $color_gray_dark;
+  padding: 15px 0; /* stylelint-disable */
+
+  p {
+    margin: 4px;
+    a {
+      color: $color_gray_dark;
+      text-decoration: none;
+      margin: 0 5px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    } /* stylelint-enable */
+  }
+}

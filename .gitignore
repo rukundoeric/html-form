@@ -1,0 +1,7 @@
+# .gitignore
+node_modules/
+.sass-cache/
+
+package.json
+package-lock.json
+css/edit.css
