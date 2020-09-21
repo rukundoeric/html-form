@@ -4,6 +4,10 @@
 > A structural clone of the intuit's signup page
 ![screenshot](img/screen-shot.JPG)
 
+## About
+* This project has to do with html form elements, Styling the entire page and form to look like that of the intuits signup page
+* we also added some javascript code to help with the warnings associated with the various inputs
+* The animations on Intuits signup page is also replicated here.
 
 ## Built With
 
